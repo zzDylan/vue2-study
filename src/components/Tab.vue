@@ -23,6 +23,7 @@
             return {
                 tabs:[
                     {title:'首页',link:'/index',icon:'home'},
+                    {title:'分类',link:'/category',icon:'type'},
                     {title:'购物车',link:'/shopping_cart',icon:'shopcart'},
                     {title:'个人中心',link:'/my',icon:'ucenter-outline'}
                 ],
