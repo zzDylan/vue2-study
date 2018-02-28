@@ -1,7 +1,7 @@
 <template>
     <div>
     <yd-tabbar fixed>
-        <yd-tabbar-item  :active="active==index" @click.native="setActive(index)" v-for="(tab,index) in tabs" :key="index" :title="tab.title" :link="tab.link">
+        <yd-tabbar-item  :active="currentIndex==index" @click.native="setActive(index)" v-for="(tab,index) in tabs" :key="index" :title="tab.title" :link="tab.link">
             <yd-icon :name="tab.icon" slot="icon" size="0.54rem"></yd-icon>
         </yd-tabbar-item>
         <!-- <yd-tabbar-item title="首页" link="/">
@@ -27,17 +27,19 @@
                     {title:'购物车',link:'/shopping_cart',icon:'shopcart'},
                     {title:'个人中心',link:'/my',icon:'ucenter-outline'}
                 ],
-                active:null,
-                isActive:false
+                currentIndex:null,
+                currentPath:''
             }
         },
         methods: {
             setActive:function(index){
-                this.active = index
+                this.currentIndex = index
+                console.log(index)
             }
         },
         created() {
             console.log(this.$router.currentRoute.path)
+            this.currentPath = this.$router.currentRoute.path
         }
     }
 </script>

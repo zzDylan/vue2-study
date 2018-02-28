@@ -25,7 +25,7 @@
         mounted: function() {
             this.$http.get('/api/data').then(res => {
                 this.data = res.data
-                console.log(this.data)
+                //console.log(this.data)
             })
         }
     }
