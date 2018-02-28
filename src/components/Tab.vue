@@ -27,19 +27,21 @@
                     {title:'购物车',link:'/shopping_cart',icon:'shopcart'},
                     {title:'个人中心',link:'/my',icon:'ucenter-outline'}
                 ],
-                currentIndex:null,
-                currentPath:''
+                currentIndex:null
             }
         },
         methods: {
             setActive:function(index){
                 this.currentIndex = index
-                console.log(index)
             }
         },
         created() {
-            console.log(this.$router.currentRoute.path)
-            this.currentPath = this.$router.currentRoute.path
+            for(let index in this.tabs) {
+                if(this.tabs[index].link == this.$router.currentRoute.path) {
+                    this.currentIndex = index
+                    return
+                }
+            }
         }
     }
 </script>

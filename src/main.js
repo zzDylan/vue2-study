@@ -7,11 +7,10 @@ import YDUI from 'vue-ydui' /* 相当于import YDUI from 'vue-ydui/ydui.rem.js' 
 import 'vue-ydui/dist/ydui.rem.css'
 import axios from 'axios'
 
-require('./mock')
+// require('./mock')
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Vue.use(YDUI);
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
