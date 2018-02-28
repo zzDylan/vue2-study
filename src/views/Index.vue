@@ -1,14 +1,16 @@
 <template>
     <div>
         <search></search>
-        <slider></slider>
+        <slider :items="banners"></slider>
         <grids></grids>    
         <rollNotice></rollNotice>
-        <list></list>
+        <list :items="goods"></list>
     </div>
 </template>
 
 <script type="text/babel">
+    import { getGoods } from '@/api/goods'
+    import { getBanners } from '@/api/banners'
     import Search from '@/components/Search'
     import Tab from '@/components/Tab'
     import Grids from '@/components/Grids'
@@ -18,15 +20,25 @@
     export default {
         data() {
             return {
-                data: []
+                goods: [],
+                banners:[]
             }
         },
         components: { Search,Tab,Grids,Slider,RollNotice,List },
         mounted: function() {
-            this.$http.get('/api/data').then(res => {
-                this.data = res.data
-                console.log(this.data)
+            getGoods().then(res => {
+                this.goods = res.data
             })
+            getBanners().then(res => {
+                this.banners = res.data
+            })
+            // this.$http.get('/api/goods').then(res => {
+            //     this.goods = res.data
+            // })
+            // this.$http.get('/api/banners').then(res => {
+            //     this.banners = res.data
+            // })
+
         }
     }
 </script>
