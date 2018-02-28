@@ -1,5 +1,5 @@
 <template>
-    <yd-list theme="3"> /* 这里可选1/2/3/4/5五种样式 */
+    <yd-list theme="3"> <!-- 这里可选1/2/3/4/5五种样式 -->
         <yd-list-item v-for="item, key in items" :key="key">
             <img slot="img" :src="item.img">
             <span slot="title">{{item.title}}</span>
@@ -33,3 +33,16 @@
         }
     }
 </script>
+<style type="text/css">
+    .demo-list-price {
+        font-size: .3rem;
+        color: #eb5211;
+    }
+    .demo-list-del-price {
+        padding-left: .06rem;
+        font-size: .2rem;
+        margin-left: .02rem;
+        position: relative;
+        color: #8c8c8c;
+    }
+</style>

@@ -1,6 +1,6 @@
 <template>
     <yd-slider autoplay="3000">
-        <yd-slider-item v-for="item in items">
+        <yd-slider-item v-for="(item,index) in items" :key="index">
             <a :href="item.href">
                 <img :src="item.img">
             </a>
